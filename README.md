@@ -1,6 +1,11 @@
 # Virtual-Reality-for-Controlling-and-Interacting-with-Robots
 Year 3 Dissertation Project Swansea University
 
+IDE Recommendations:
+
+1. VSCode
+2. PyCharm
+
 Project Set Up Instructions:
 
 1. Install Python 2.7 this can be found following this link:
