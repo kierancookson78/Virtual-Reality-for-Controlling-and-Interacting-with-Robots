@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:editor="UnityEditor.UIElements"
+
+xsi:noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd"
+xsi:schemaLocation="
+                        UnityEngine.UIElements ../../../../UIElementsSchema/UnityEngine.UIElements.xsd
+                        UnityEditor.UIElements ../../../../UIElementsSchema/UnityEditor.UIElements.xsd
+                        UnityEditor.PackageManager.UI ../../../../UIElementsSchema/UnityEditor.PackageManager.UI.xsd
+"
+>
+  <engine:VisualElement>
+    <editor:ObjectField name="ObjectField" label="Pepper Prefab">
+    </editor:ObjectField>
+    <editor:ObjectField name="GeneralSettings" label="General Settings">
+    </editor:ObjectField>
+  </engine:VisualElement>
+    <engine:VisualElement>
+        <engine:Box>
+            <editor:FloatField name="KneePitchField" label="Knee Pitch"/>
+            <engine:Slider name="KneePitch" label="Knee Pitch" low-value="-29.5" high-value="29.5"/>
+            <engine:Button name="KneePitchReset" text="Reset Knee"/>
+        </engine:Box>
+    </engine:VisualElement>
+    <engine:VisualElement class="row">
+        <engine:Box>
+            <editor:FloatField name="HipPitchField" label="Hip Pitch"/>
+            <engine:Slider name="HipPitch" label="Hip Pitch" low-value="-59.5" high-value="59.5"/>
+            <engine:Button name="HipPitchReset" text="Reset Hip Pitch"/>
+        </engine:Box>
+        <engine:Box>
+            <editor:FloatField name="HipRollField" label="Hip Roll"/>
+            <engine:Slider name="HipRoll" label="Hip Roll" low-value="-29.5" high-value="29.5"/>
+            <engine:Button name="HipRollReset" text="Reset Hip Roll"/>
+        </engine:Box>
+    </engine:VisualElement>
+    <engine:VisualElement class="row">
+        <engine:Box>
+            <editor:FloatField name="HeadPitchField" label="Head Pitch"/>
+            <engine:Slider name="HeadPitch" label="Head Pitch" low-value="-40.5" high-value="25.5"/>
+            <engine:Button name="HeadPitchReset" text="Reset Head Pitch"/>
+        </engine:Box>
+        <engine:Box>
+            <editor:FloatField name="HeadJawField" label="Head Jaw"/>
+            <engine:Slider name="HeadJaw" label="Head Jaw" low-value="-119.5" high-value="119.5"/>
+            <engine:Button name="HeadJawReset" text="Reset Head Jaw"/>
+        </engine:Box>
+    </engine:VisualElement>
+    <engine:VisualElement class="row">
+        <engine:Box>
+            <editor:FloatField name="ShoulderLPitchField" label="Shoulder L Pitch"/>
+            <engine:Slider name="ShoulderLPitch" label="Shoulder L Pitch" low-value="-119.5" high-value="119.5"/>
+
+            <editor:FloatField name="ShoulderLRollField" label="Shoulder L Roll"/>
+            <engine:Slider name="ShoulderLRoll" label="Shoulder L Roll" low-value="-0.5" high-value="89.5"/>
+            <engine:Button name="ShoulderLReset" text="Reset Left Shoulder"/>
+        </engine:Box>
+        <engine:Box>
+            <editor:FloatField name="ShoulderRPitchField" label="Shoulder R Pitch"/>
+            <engine:Slider name="ShoulderRPitch" label="Shoulder R Pitch" low-value="-119.5" high-value="119.5"/>
+
+            <editor:FloatField name="ShoulderRRollField" label="Shoulder R Roll"/>
+            <engine:Slider name="ShoulderRRoll" label="Shoulder R Roll" low-value="-0.5" high-value="89.5"/>
+            <engine:Button name="ShoulderRReset" text="Reset Right Shoulder"/>
+        </engine:Box>
+    </engine:VisualElement>
+    <engine:VisualElement class="row">
+        <engine:Box>
+            <editor:FloatField name="ElbowLYawField" label="Elbow L Yaw"/>
+            <engine:Slider name="ElbowLYaw" label="Elbow L Yaw" low-value="-119.5" high-value="119.5"/>
+
+            <editor:FloatField name="ElbowLRollField" label="Elbow L Roll"/>
+            <engine:Slider name="ElbowLRoll" label="Elbow L Roll" low-value="-89.5" high-value="0.5"/>
+            <engine:Button name="ElbowLReset" text="Reset Left Elbow"/>
+        </engine:Box>
+        <engine:Box>
+            <editor:FloatField name="ElbowRYawField" label="Elbow R Yaw"/>
+            <engine:Slider name="ElbowRYaw" label="Elbow R Yaw" low-value="-119.5" high-value="119.5"/>
+
+            <editor:FloatField name="ElbowRRollField" label="Elbow R Roll"/>
+            <engine:Slider name="ElbowRRoll" label="Elbow R Roll" low-value="-89.5" high-value="0.5"/>
+            <engine:Button name="ElbowRReset" text="Reset Right Elbow"/>
+        </engine:Box>
+    </engine:VisualElement>
+    <engine:VisualElement class="row">
+        <engine:Box>
+            <editor:FloatField name="WristLYawField" label="Wrist L Yaw"/>
+            <engine:Slider name="WristLYaw" label="Wrist L Yaw" low-value="-104.5" high-value="104.5"/>
+            <engine:Button name="WristLYawReset" text="Reset Left Wrist"/>
+        </engine:Box>
+        <engine:Box>
+            <editor:FloatField name="WristRYawField" label="Wrist R Yaw"/>
+            <engine:Slider name="WristRYaw" label="Wrist R Yaw" low-value="-104.5" high-value="104.5"/>
+            <engine:Button name="WristRYawReset" text="Reset Right Wrist"/>
+        </engine:Box>
+    </engine:VisualElement>
+    <engine:VisualElement class="row">
+        <engine:Box>
+
+            <engine:Slider name="HandL" label="Hand L" low-value="0.0" high-value="1.0"/>
+            <engine:Button name="HandLReset" text="Reset Left Hand"/>
+        </engine:Box>
+        <engine:Box>
+
+            <engine:Slider name="HandR" label="Hand R" low-value="0.0" high-value="1.0"/>
+            <engine:Button name="HandRReset" text="Reset Right Hand"/>
+        </engine:Box>
+    </engine:VisualElement>
+    <engine:Button name="ResetAll" text="Reset All"/>
+    <engine:Toggle name="Option_PreventIntersection" text="Prevent Intersection"/>
+    <engine:VisualElement>
+        <engine:Button name="CreateAnimation" text="Create Animation"/>
+        <engine:TextField name="AnimationName" text="Animation Name"/>
+		<engine:Box>
+			<engine:Button name="CurrentPoseToKeyframe" text="Current Pose To Keyframe"/>
+			<editor:IntegerField name="CurrentKeyframe" label="Current Keyframe"/>
+		</engine:Box>
+        <engine:Button name="PoseToMotorValues" text="Save Pose To Textfile"/>
+        <engine:Button name="PoseValue" text="Load Pose From Textfile"/>
+        <engine:VisualElement class="row">
+          <engine:VisualElement>
+            <engine:Button name="Connect" text="Connect Pepper"/>
+            <engine:TextField name="IP" text="IP"/>
+            <engine:Toggle name="IDE" text="IDE"/>
+            <engine:Button name="Disconnect" text="Disconnect Pepper"/>
+          </engine:VisualElement>
+          <engine:VisualElement>
+            <engine:Button name="Sleep" text="Sleep Pepper"/>
+            <engine:Button name="WakeUp" text="Wake Up Pepper"/>
+          </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:Toggle name="Option_AutoSend" text="Auto Send"/>
+        <engine:Button name="SendPose" text="Send Pose"/>
+        <engine:Button name="ReceivePose" text="Receive Pose"/>
+    </engine:VisualElement>
+</engine:UXML>

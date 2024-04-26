@@ -1,0 +1,3 @@
+Hallo mein name ist Pepper! Willkommen bei PePUT.
+PePUT steht fuer Pepper Python Unity Toolkit.
+PePUT macht es moeglich Pepper ganz einfach ueber Unity zu steuern.

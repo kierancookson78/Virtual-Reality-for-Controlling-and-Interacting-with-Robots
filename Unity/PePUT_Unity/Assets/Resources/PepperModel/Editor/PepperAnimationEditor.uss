@@ -1,0 +1,14 @@
+Button{
+    width: 400px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+Box{
+    width: 400px;
+}
+
+.row {
+    flex-direction: row;
+    padding-top: 10px;
+}
