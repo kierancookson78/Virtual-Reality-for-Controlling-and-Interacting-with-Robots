@@ -27,9 +27,9 @@ public class Navigation_Interface : MonoBehaviour, TCPMessageSubscriber
         Thread waitForClientThread = new Thread(() => waitForClient());
         waitForClientThread.Start();
 
-        x.text = "0";
-        y.text = "0";
-        theta.text = "0";
+        //x.text = "0";
+        //y.text = "0";
+        //theta.text = "0";
     }
 
     private void waitForClient()
@@ -52,6 +52,7 @@ public class Navigation_Interface : MonoBehaviour, TCPMessageSubscriber
 
         if (Input.GetKey(KeyCode.W))
         {
+            Debug.Log("W WAS PRESSED!!!!!!");
             should_move = true;
             navigation.MoveForeward(speed.value);
         }

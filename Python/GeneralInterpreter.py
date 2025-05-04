@@ -1,6 +1,5 @@
 import threading
 import time
-
 import Topics.Robot.Speech as Speech
 import Topics.Robot.Movement as Movement
 import Topics.Robot.MotorControl as MotorControl
@@ -11,6 +10,8 @@ import Topics.Robot.RobotAutonomy as RobotAutonomy
 from naoqi import *
 
 import almath
+
+from config import ROBOT_PORT
 
 
 class MoveThread(threading.Thread):
@@ -108,7 +109,7 @@ class Interpreter:
             content = message["content"]
 
             IP = content["IP"]
-            port = content["port"]
+            port = ROBOT_PORT
             autonomy_mode = content["autonomy_mode"]
 
             self.session = qi.Session()
@@ -125,7 +126,7 @@ class Interpreter:
 
             self.behavior_mng_service = self.session.service("ALBehaviorManager")
 
-            self.diagnosis_service = self.session.service("ALDiagnosis")
+            #self.diagnosis_service = self.session.service("ALDiagnosis")
 
             self.memory_service = self.session.service("ALMemory")
 

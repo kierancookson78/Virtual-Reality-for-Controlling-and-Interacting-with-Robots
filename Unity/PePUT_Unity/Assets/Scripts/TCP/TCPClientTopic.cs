@@ -33,7 +33,7 @@ public class TCPClientTopic
 	private int pepper_port;
 	private RobotAutonomyContent.AUTONOMY_MODE pepper_autonomy_mode;
 	private bool connected = false;
-	public TCPClientTopic(string ip, RobotAutonomyContent.AUTONOMY_MODE autonomy_mode = RobotAutonomyContent.AUTONOMY_MODE.SAFEGUARD, int port = 9559)
+	public TCPClientTopic(string ip, RobotAutonomyContent.AUTONOMY_MODE autonomy_mode = RobotAutonomyContent.AUTONOMY_MODE.SAFEGUARD, int port = RobotPort.RobotPortNumber)
     {
 		pepper_ip = ip;
 		pepper_port = port;

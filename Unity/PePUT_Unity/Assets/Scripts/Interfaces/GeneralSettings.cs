@@ -14,7 +14,7 @@ public class GeneralSettings : MonoBehaviour, TCPMessageSubscriber
     [SerializeField] Dropdown autonomousMode;
 
     private string IP = "";
-    static int port = 9559;
+    static int port = RobotPort.RobotPortNumber;
     public TCPClientTopic client = null;
     public bool connected = false;
 
@@ -42,7 +42,7 @@ public class GeneralSettings : MonoBehaviour, TCPMessageSubscriber
 
     public void SetIP()
     {
-        IP = IPInput.text;
+        IP = "127.0.0.1";
         Debug.Log("IP set to: " + IP);
     }
 

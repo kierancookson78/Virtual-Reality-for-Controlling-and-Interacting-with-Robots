@@ -8,13 +8,9 @@ using System;
 public class ArmTracking : MonoBehaviour
 {
     private InputDevice targetDevice;
-    [Serializable] public class ArmMovementEvent : UnityEvent<Vector3>{}
-
-    [SerializeField] private ArmMovementEvent onNewShoulderPitch, onNewShoulderRoll;
-
-    bool isShoulderPitchEngaged = false;
-    bool isShoulderRollEngaged = false;
-
+    [SerializeField] private GeneralSettings generalSettings;
+    private float lastRotationTime = 0f;
+    private float rotationCooldown = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -35,36 +31,13 @@ public class ArmTracking : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {    
-        //Getting output data from the devicePostion using Vector3
-        //Utilising Boolean flags to ensure the same method is not repeatedly called and prevent overload to the server
-        targetDevice.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePositionValue);
-        if(devicePositionValue.y > 0.0f)
+    {
+        if (Time.time - lastRotationTime >= rotationCooldown)
         {
-            if (!isShoulderPitchEngaged)
-            {
-                onNewShoulderPitch.Invoke(devicePositionValue);
-                isShoulderPitchEngaged = true;
-            }
-        }
-        else
-        {
-            isShoulderPitchEngaged = false;
-        }
-
-        if(devicePositionValue.x > 0.5)
-        {
-            if (!isShoulderRollEngaged)
-            {
-                onNewShoulderRoll.Invoke(devicePositionValue);
-                isShoulderRollEngaged = true;
-            }
-        }
-
-        else
-        {
-            isShoulderRollEngaged = false;
+            targetDevice.TryGetFeatureValue(CommonUsages.devicePosition, out Vector3 devicePositionValue);
+            generalSettings.AdjustShoulderPitchRightInit(devicePositionValue.y * Mathf.Rad2Deg);
+            generalSettings.AdjustShoulderRollRightInit(devicePositionValue.x * Mathf.Rad2Deg);
+            lastRotationTime = Time.time;
         }
     }
-
 }

@@ -13,13 +13,9 @@ public class HeadTracking : MonoBehaviour
 
     public XRRig headset;
 
-    [Serializable] public class HeadMovementEvent : UnityEvent<UnityEngine.Quaternion>{}
-
-
-    [SerializeField] private HeadMovementEvent onNewHeadPitchUp, onNewHeadPitchDown;
-
-    bool isHeadPitchUpEngaged = false;
-    bool isHeadPitchDownEngaged = false;
+    [SerializeField] private GeneralSettings generalSettings;
+    private float lastRotationTime = 0f;
+    private float rotationCooldown = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,47 +27,25 @@ public class HeadTracking : MonoBehaviour
 
         foreach (var device in devices)
         {
-            
-            if (device.name.ToLower().Contains("") && device.name.ToLower().Contains("")){
+
+            if (device.name.ToLower().Contains("") && device.name.ToLower().Contains(""))
+            {
                 targetDevice = device;
                 Debug.Log(device.name + ": " + device.role);
             }
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         targetDevice.TryGetFeatureValue(CommonUsages.deviceRotation, out UnityEngine.Quaternion deviceRotationValue);
-
-        //Sets headpitch to up if the z rotation is above the threshold
-        if(deviceRotationValue.z > 0.4)
+        if (Time.time - lastRotationTime >= rotationCooldown)
         {
-            if(!isHeadPitchUpEngaged)
-            {
-                onNewHeadPitchUp.Invoke(deviceRotationValue);
-                isHeadPitchUpEngaged = true;
-            }
+            generalSettings.AdjustHeadPitchInit(deviceRotationValue.z * Mathf.Rad2Deg);
+            generalSettings.AdjustHeadYawInit(deviceRotationValue.y * Mathf.Rad2Deg);
+            lastRotationTime = Time.time;
         }
-        else
-        {
-            isHeadPitchUpEngaged = false;
-        }
-        
-        //sets headpitch to down if the z rotation is below the threshold
-        if(deviceRotationValue.z < -0.4)
-        {
-            if(!isHeadPitchDownEngaged)
-            {
-                onNewHeadPitchDown.Invoke(deviceRotationValue);
-                isHeadPitchDownEngaged = true;
-            }
-        }
-        else
-        {
-            isHeadPitchDownEngaged = false;
-        }
-
     }
 }

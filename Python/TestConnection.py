@@ -1,13 +1,16 @@
 import time
 from naoqi import ALProxy
 import almath
-tts = ALProxy("ALTextToSpeech", "169.254.228.115", 9559)
+
+from config import ROBOT_PORT
+
+tts = ALProxy("ALTextToSpeech", "127.0.0.1", ROBOT_PORT)
 tts.say("Hallo Welt")
-posture = ALProxy("ALRobotPosture", "169.254.228.115", 9559)
+posture = ALProxy("ALRobotPosture", "127.0.0.1", ROBOT_PORT)
 posture.goToPosture("StandInit", 0.5)
 
 
-motion = ALProxy("ALMotion", "169.254.228.115", 9559)
+motion = ALProxy("ALMotion", "127.0.0.1", ROBOT_PORT)
 '''
 motion.setStiffnesses("Head", 1.0)
 
