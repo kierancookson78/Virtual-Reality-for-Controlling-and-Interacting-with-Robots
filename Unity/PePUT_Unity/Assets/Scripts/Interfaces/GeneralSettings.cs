@@ -26,23 +26,9 @@ public class GeneralSettings : MonoBehaviour, TCPMessageSubscriber
     Tablet tablet;
     MemoryData memoryData;
 
-    private void Start()
-    {
-        string ipConfig = FileReaderWriter.ReadFromFile("config");
-        if(ipConfig != "")
-        {
-            IP = ipConfig;
-            IPInput.text = ipConfig;
-        }
-
-        string current = Directory.GetCurrentDirectory();
-        current += "\\..\\..\\Python";
-        Debug.Log(current);
-    }
-
     public void SetIP()
     {
-        IP = "127.0.0.1";
+        IP = IPInput.text;
         Debug.Log("IP set to: " + IP);
     }
 
