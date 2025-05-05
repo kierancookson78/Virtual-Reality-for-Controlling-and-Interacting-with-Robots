@@ -22,3 +22,5 @@ UBS Country House #2 - Construction Set H33 by Universal Building System at: htt
 Water 5 FX Particle Pack by Stars Products at: https://assetstore.unity.com/packages/vfx/particles/environment/water-5-fx-particle-pack-192211
 
 Fire & Spell Effects by Digital Ruby (Jeff Johnson) at: https://assetstore.unity.com/packages/vfx/particles/fire-explosions/fire-spell-effects-36825
+
+The project by Josh Wott is a modified version of PePUT by Ganal et al which can be found at: https://gitlab2.informatik.uni-wuerzburg.de/mi-development/peput
