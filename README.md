@@ -9,7 +9,7 @@ This project implements a use case scenario which is of a firefighting scene.
 
 NOTE: If using the Choregraphe simulation instead of a physical NAO robot the connection instructions differ slightly.
 
-1. To find its port we head to Edit > Preferences > Virtual Robot. 
+1. To find its port head to Edit > Preferences > Virtual Robot. 
 	
 2. Enter this port into the config.py file in the python folder and enter this port within the Unity project in Assets > RobotPort.cs
 
