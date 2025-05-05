@@ -14,3 +14,11 @@ NOTE: If using the Choregraphe simulation instead of a physical NAO robot the co
 2. Enter this port into the config.py file in the python folder and enter this port within the Unity project in Assets > RobotPort.cs
 
 3. Now Enter local host IP "127.0.0.1" into the IP address field when in Unity playmode then click "Connect"
+
+The firefighting scene also uses some assets from the unity store:
+
+UBS Country House #2 - Construction Set H33 by Universal Building System at: https://assetstore.unity.com/packages/3d/environments/ubs-country-house-2-construction-set-h33-131539
+
+Water 5 FX Particle Pack by Stars Products at: https://assetstore.unity.com/packages/vfx/particles/environment/water-5-fx-particle-pack-192211
+
+Fire & Spell Effects by Digital Ruby (Jeff Johnson) at: https://assetstore.unity.com/packages/vfx/particles/fire-explosions/fire-spell-effects-36825
